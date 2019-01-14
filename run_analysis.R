@@ -32,6 +32,7 @@ acdata <- rbind(
 
 colnames(acdata) <- c('subject',features[,2],'activity')
 
+# deleting used single imported dataframes in order free up memory space by those datasets
 rm(train_activity,train_subjects,train_values,test_activity,test_subjects,test_values)
 
 ########## TASK 2
