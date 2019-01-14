@@ -1,6 +1,7 @@
-## first we dl the dataset and prepare it to be explored and read by R
+########## TASK 1
+##--------download the datasets and prepare it to be explored and read by R--------##
 
-library(dplyr)
+library(dplyr) 
 #-----test files---------------#
 test_subjects <- read.table(file = file.path('UCI HAR Dataset','test','subject_test.txt'))
 
@@ -16,7 +17,7 @@ train_values <- read.table(file = file.path('UCI HAR Dataset','train','X_train.t
 
 train_activity <- read.table(file = file.path('UCI HAR Dataset','train','y_train.txt'))
 
-#############
+#-----features and activity--------#
 features <- read.table(file.path('UCI HAR Dataset','features.txt'),as.is = T)
 
 activity <- read.table(file.path('UCI HAR Dataset','activity_labels.txt'))
@@ -33,18 +34,22 @@ colnames(acdata) <- c('subject',features[,2],'activity')
 
 rm(train_activity,train_subjects,train_values,test_activity,test_subjects,test_values)
 
-
+########## TASK 2
 #-------keeping means stds and subjects or activities---------#
 
 wantedcolumnsvec <- grep(colnames(acdata),pattern = 'subject|activity|mean|std')
 
 acdata <- acdata[,wantedcolumnsvec]
 
-#------task3-------#
+############ TASK 3
+#----- Uses descriptive activity names to name the activities in the data set ----#
+
 acdata$activity <- factor ( x = acdata$activity , levels = activity$ID, labels = activity$label)
 
 
-###--- task4------#
+######## TASK 4
+#-----Appropriately labels the data set with descriptive variable names.----#
+
 varname <- colnames(acdata)
 varname <- gsub(pattern = '[//()_]-','',varname)
 varname <- gsub(pattern = '^t','time-domain',varname)
@@ -56,7 +61,8 @@ varname <- gsub(pattern = 'std','standarddeviation',varname)
 
 colnames(acdata) <- varname
 
-##----task5 ---------
+######## TASK 5
+#-----creates a second, independent tidy data set with the average of each variable for each activity and each subject.----#
 tidyhumanact <- as_tibble(acdata)
 tidyhumanact <- tidyhumanact[,c(1,81,2:80)]
 
