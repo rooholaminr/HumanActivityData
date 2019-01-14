@@ -26,4 +26,25 @@ You should create one R script called run_analysis.R that does the following.
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-Good luck!
+
+
+
+
+<hr/>
+
+## So the way I did this project:
+1. setting up folders and exploring files [some did it inside code but I did it by extracting data and by windows]
+2. import datasets; train , test , feature , subject
+3. merging data using ``` rbind() cbind() ```
+4. filtering data catagories by ***std*** and ***mean*** and relabeling all variable names
+5. grouping and summarizing all data in means in 180 subject-acticity catagories.[30 subjects and 6 activities]
+
+
+## documenting proccess :
+1. setting up github reapo with a readme.md
+2.commenting the whole code in an intuitive way
+3. adding codebook which contains variable names and variables of [tidy_data.txt](https://github.com/rooholaminr/HumanActivityData/blob/master/tidy_data.txt)
+4.updating readme 
+
+
+### hope you find it useful
