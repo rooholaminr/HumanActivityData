@@ -3,6 +3,21 @@
 
 
 
+## explaining variables inside code :
+
+1. ``` test_subject ```  : data file imported with name ``` subject_test.txt ```
+2. ``` test_activity ``` : data file imported with name ``` y_test.txt ```
+3. ``` test_values ```   : data file imported with name ``` X_test.txt ```
+4. ``` train_subjects ```: data file imported with name ``` subject_train.txt ```
+5. ``` train_values ```  : data file imported with name ``` X_train.txt ```
+6. ```train_activity ``` : data file imported with name ``` y_train.txt ```
+7. ``` features ```      : data file imported with name ``` features.txt ```
+8. ``` activity ```      : data file imported with name ``` activity_labels.txt ```
+9. ``` acdata ```        : merged dataset
+10. ``` varname ```      : vector of column's names used for renaming
+11. ``` tidyhumanact ``` : new data frame created in requested criteria summarized by mean
+
+
 ## DATA :
 data is stored in a .txt file in a table with space separated text file
 named ``` tidy_data.txt ``` which is provided in this [link](https://github.com/rooholaminr/HumanActivityData/blob/master/tidy_data.txt).
